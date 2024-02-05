@@ -26,10 +26,10 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 #include "config.h"
-#include <esp32_can.h>
+#include "esp32_can.h"
 #include <SPI.h>
 #include <Preferences.h>
-#include <FastLED.h>
+#include "FastLED.h"
 #include "ELM327_Emulator.h"
 #include "SerialConsole.h"
 #include "wifi_manager.h"

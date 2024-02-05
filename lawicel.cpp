@@ -4,7 +4,7 @@ Implements the lawicel protocol.
 
 #include "lawicel.h"
 #include "config.h"
-#include <esp32_can.h>
+#include "esp32_can.h"
 #include "utility.h"
 
 void LAWICELHandler::handleShortCmd(char cmd)

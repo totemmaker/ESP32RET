@@ -31,7 +31,7 @@ by stimmer
 */
 
 #include "sys_io.h"
-#include <FastLED.h>
+#include "FastLED.h"
 
 extern CRGB leds[A5_NUM_LEDS];
 
