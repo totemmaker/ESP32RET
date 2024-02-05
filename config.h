@@ -60,7 +60,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #define NUM_DIGITAL 6   // Not currently using digital pins on the ESP32
 #define NUM_OUTPUT  6   // Ditto
 
-#define NUM_BUSES   5   //max # of buses supported by any of the supported boards
+#define NUM_BUSES   2   //max # of buses supported by any of the supported boards
 
 //It's not even used on this hardware currently. But, slows down the blinks to make them more visible
 #define BLINK_SLOWNESS  100 
@@ -101,7 +101,7 @@ struct EEPROMSettings {
     boolean useBinarySerialComm; //use a binary protocol on the serial link or human readable format?
 
     uint8_t logLevel; //Level of logging to output on serial line
-    uint8_t systemType; //0 = A0RET, 1 = EVTV ESP32 Board, 2 = Macchine 5-CAN board
+    uint8_t systemType; //0 = RoboBoard X4
     
     boolean enableBT; //are we enabling bluetooth too?
     char btName[32];
