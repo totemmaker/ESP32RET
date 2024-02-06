@@ -236,11 +236,11 @@ fastest and safest with limited function calls
 void loop()
 {
     //uint32_t temp32;    
-    bool isConnected = false;
+    // bool isConnected = false;
     int serialCnt;
     uint8_t in_byte;
 
-    /*if (Serial)*/ isConnected = true;
+    // /*if (Serial)*/ isConnected = true;
 
     if (SysSettings.lawicelPollCounter > 0) SysSettings.lawicelPollCounter--;
     //}

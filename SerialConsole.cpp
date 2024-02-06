@@ -52,7 +52,7 @@ void SerialConsole::init()
 
 void SerialConsole::printMenu()
 {
-    char buff[80];
+    // char buff[80];
     //Show build # here as well in case people are using the native port and don't get to see the start up messages
     Serial.print("Build number: ");
     Serial.println(CFG_BUILD_NUM);
@@ -142,7 +142,7 @@ void SerialConsole::handleConsoleCmd()
 
 void SerialConsole::handleShortCmd()
 {
-    uint8_t val;
+    // uint8_t val;
 
     switch (cmdBuffer[0]) {
     //non-lawicel commands
@@ -179,15 +179,15 @@ void SerialConsole::handleConfigCmd()
     int newValue;
     char *newString;
     bool writeEEPROM = false;
-    bool writeDigEE = false;
-    char *dataTok;
+    // bool writeDigEE = false;
+    // char *dataTok;
 
     //Logger::debug("Cmd size: %i", ptrBuffer);
     if (ptrBuffer < 6)
         return; //4 digit command, =, value is at least 6 characters
     cmdBuffer[ptrBuffer] = 0; //make sure to null terminate
     String cmdString = String();
-    unsigned char whichEntry = '0';
+    // unsigned char whichEntry = '0';
     i = 0;
 
     while (cmdBuffer[i] != '=' && i < ptrBuffer)
@@ -441,8 +441,8 @@ void SerialConsole::handleConfigCmd()
 //CAN0FILTER%i=%%i,%%i,%%i,%%i (ID, Mask, Extended, Enabled)", i);
 bool SerialConsole::handleFilterSet(uint8_t bus, uint8_t filter, char *values)
 {
-    if (filter < 0 || filter > 7) return false;
-    if (bus < 0 || bus > 1) return false;
+    if (/*filter < 0 ||*/ filter > 7) return false;
+    if (/*bus < 0 ||*/ bus > 1) return false;
 
     //there should be four tokens
     char *idTok = strtok(values, ",");

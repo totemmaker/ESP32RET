@@ -25,7 +25,7 @@ void WiFiManager::setup()
         WiFi.setSleep(true); //sleeping could cause delays
         WiFi.begin((const char *)settings.SSID, (const char *)settings.WPA2Key);
 
-        WiFiEventId_t eventID = WiFi.onEvent([](WiFiEvent_t event, WiFiEventInfo_t info) 
+        /*WiFiEventId_t eventID = */WiFi.onEvent([](WiFiEvent_t event, WiFiEventInfo_t info)
         {
            if (SysSettings.fancyLED)
            {

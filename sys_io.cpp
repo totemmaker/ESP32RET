@@ -51,7 +51,7 @@ ADC_COMP adc_comp[NUM_ANALOG]; //holds ADC offset or gain
 
 //forces the digital I/O ports to a safe state. This is called very early in initialization.
 void sys_early_setup(){
-    uint8_t i;
+    // uint8_t i;
 }
 
 /*
@@ -59,7 +59,7 @@ Initialize DMA driven ADC and read in gain/offset for each channel
 */
 void setup_sys_io()
 {
-    uint8_t i;
+    // uint8_t i;
 
     setupFastADC();
 }

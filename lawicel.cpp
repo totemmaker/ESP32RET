@@ -76,7 +76,7 @@ void LAWICELHandler::handleShortCmd(char cmd)
 void LAWICELHandler::handleLongCmd(char *buffer)
 {
     CAN_FRAME outFrame;
-    char buff[80];
+    // char buff[80];
     int val;
     
     tokenizeCmdString(buffer);
@@ -86,7 +86,7 @@ void LAWICELHandler::handleLongCmd(char *buffer)
         outFrame.id = Utility::parseHexString(buffer + 1, 3);
         outFrame.length = buffer[4] - '0';
         outFrame.extended = false;
-        if (outFrame.length < 0) outFrame.length = 0;
+        // if (outFrame.length < 0) outFrame.length = 0;
         if (outFrame.length > 8) outFrame.length = 8;
         for (int data = 0; data < outFrame.length; data++) {
             outFrame.data.bytes[data] = Utility::parseHexString(buffer + 5 + (2 * data), 2);
@@ -98,7 +98,7 @@ void LAWICELHandler::handleLongCmd(char *buffer)
         outFrame.id = Utility::parseHexString(buffer + 1, 8);
         outFrame.length = buffer[9] - '0';
         outFrame.extended = false;
-        if (outFrame.length < 0) outFrame.length = 0;
+        // if (outFrame.length < 0) outFrame.length = 0;
         if (outFrame.length > 8) outFrame.length = 8;
         for (int data = 0; data < outFrame.length; data++) {
             outFrame.data.bytes[data] = Utility::parseHexString(buffer + 10 + (2 * data), 2);
@@ -296,9 +296,9 @@ bool LAWICELHandler::parseLawicelCANCmd(CAN_FRAME &frame) {
 void LAWICELHandler::sendFrameToBuffer(CAN_FRAME &frame, int whichBus)
 {
     uint8_t buff[40];
-    uint8_t writtenBytes;
-    uint8_t temp;
-    uint32_t now = micros();
+    // uint8_t writtenBytes;
+    // uint8_t temp;
+    // uint32_t now = micros();
     
     if (SysSettings.lawicellExtendedMode) 
     {
